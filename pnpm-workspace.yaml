@@ -1,0 +1,4 @@
+packages:
+  - admin
+  - server
+  - admin-vue

@@ -1,0 +1,23 @@
+{
+  "name": "nest-ruoyi-react",
+  "version": "0.1.0",
+  "description": "基础 Nest.js 和 React 的若依框架，使用 Antd.",
+  "scripts": {
+    "format": "biome check --apply ./admin/ && biome check --apply ./server/"
+  },
+  "author": {
+    "email": "i@airbozh.cn",
+    "name": "ilovemoyu"
+  },
+  "homepage": "https://github.com/ilovemoyu",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ilovemoyu/nest-ruoyi-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ilovemoyu/nest-ruoyi-react/issues"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.3"
+  }
+}

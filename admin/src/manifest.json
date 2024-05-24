@@ -1,0 +1,14 @@
+{
+  "name": "原则后台",
+  "short_name": "Hyper Center",
+  "display": "standalone",
+  "start_url": "./?utm_source=homescreen",
+  "theme_color": "#002140",
+  "background_color": "#001529",
+  "icons": [
+    {
+      "src": "lusun-logo.png",
+      "sizes": "192x192"
+    }
+  ]
+}
