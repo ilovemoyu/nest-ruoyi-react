@@ -318,21 +318,7 @@ const PostTableList: React.FC = () => {
                 id='pages.searchTable.delete'
                 defaultMessage='删除'
               />
-            </Button>,
-            <Button
-              type='primary'
-              key='export'
-              hidden={!access.hasPerms('system:post:export')}
-              onClick={async () => {
-                handleExport()
-              }}
-            >
-              <PlusOutlined />
-              <FormattedMessage
-                id='pages.searchTable.export'
-                defaultMessage='导出'
-              />
-            </Button>,
+            </Button>
           ]}
           request={(params) =>
             getPostList({ ...params } as API.System.PostListParams).then(
