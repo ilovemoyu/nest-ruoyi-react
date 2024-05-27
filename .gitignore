@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+ormlogs.log*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -24,3 +25,4 @@ dist-ssr
 *.sw?
 
 admin/src/.umi
+server/src/config/dev.yml
