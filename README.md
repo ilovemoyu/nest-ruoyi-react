@@ -106,5 +106,4 @@ Modern browsers.
 
 Any type of contribution is welcome, here are some examples of how you may contribute to this project:
 
-- Use Ant Design Pro in your daily work.
-- Submit [issues](https://github.com/taozhi1010/nest-admin/issues) to report bugs or ask questions.
+- Submit [issues]([https://github.com/taozhi1010/nest-admin](https://github.com/ilovemoyu/nest-ruoyi-react)/issues) to report bugs or ask questions.
