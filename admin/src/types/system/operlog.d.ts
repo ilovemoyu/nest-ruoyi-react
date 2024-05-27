@@ -1,4 +1,4 @@
-declare namespace API.Monitor {
+declare namespace API.System {
   export interface Operlog {
     operId: number
     title: string

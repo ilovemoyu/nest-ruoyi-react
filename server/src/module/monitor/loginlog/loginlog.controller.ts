@@ -4,7 +4,7 @@ import { LoginlogService } from './loginlog.service';
 import { ListLoginlogDto } from './dto/index';
 
 @ApiTags('登录日志')
-@Controller('monitor/logininfor')
+@Controller('system/logininfor')
 export class LoginlogController {
   constructor(private readonly loginlogService: LoginlogService) {}
   @ApiOperation({

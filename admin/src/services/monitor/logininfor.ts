@@ -2,9 +2,9 @@ import { request } from '@umijs/max'
 
 // 查询系统访问记录列表
 export async function getLogininforList(
-  params?: API.Monitor.LogininforListParams,
+  params?: API.System.LogininforListParams,
 ) {
-  return request<API.Monitor.LogininforPageResult>(
+  return request<API.System.LogininforPageResult>(
     '/api/system/logininfor/list',
     {
       method: 'GET',
@@ -18,7 +18,7 @@ export async function getLogininforList(
 
 // 查询系统访问记录详细
 export function getLogininfor(infoId: number) {
-  return request<API.Monitor.LogininforInfoResult>(
+  return request<API.System.LogininforInfoResult>(
     `/api/system/logininfor/${infoId}`,
     {
       method: 'GET',
