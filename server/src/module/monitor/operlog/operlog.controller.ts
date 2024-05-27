@@ -3,7 +3,7 @@ import { OperlogService } from './operlog.service';
 import type { CreateOperlogDto } from './dto/create-operlog.dto';
 import type { UpdateOperlogDto } from './dto/update-operlog.dto';
 
-@Controller('monitor/operlog')
+@Controller('system/operlog')
 export class OperlogController {
   constructor(private readonly operlogService: OperlogService) {}
 

@@ -31,6 +31,10 @@ export class ConfigService {
       entity.andWhere(`entity.configKey LIKE "%${query.configKey}%"`);
     }
 
+    if (query.configValue) {
+      entity.andWhere(`entity.configValue LIKE "%${query.configValue}%"`);
+    }
+
     if (query.configType) {
       entity.andWhere('entity.configType = :configType', { configType: query.configType });
     }

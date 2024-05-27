@@ -32,6 +32,11 @@ export class CreateMenuDto {
   @ApiProperty({ required: true })
   @IsString()
   @Length(0, 200)
+  perms: string;
+
+  @ApiProperty({ required: true })
+  @IsString()
+  @Length(0, 200)
   path: string;
 
   @ApiProperty({ required: false })

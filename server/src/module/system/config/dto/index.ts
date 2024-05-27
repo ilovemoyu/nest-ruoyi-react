@@ -65,4 +65,9 @@ export class ListConfigDto extends PagingDto {
   @IsString()
   @IsEnum(TypeEnum)
   configType?: string;
+
+  @IsOptional()
+  @IsString()
+  @Length(0, 500)
+  configValue?: string;
 }

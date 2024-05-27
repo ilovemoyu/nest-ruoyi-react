@@ -111,7 +111,7 @@ const LogininforTableList: React.FC = () => {
   const formTableRef = useRef<FormInstance>()
 
   const actionRef = useRef<ActionType>()
-  const [selectedRows, setSelectedRows] = useState<API.Monitor.Logininfor[]>([])
+  const [selectedRows, setSelectedRows] = useState<API.System.Logininfor[]>([])
   const [statusOptions, setStatusOptions] = useState<any>([])
 
   const access = useAccess()
@@ -125,11 +125,11 @@ const LogininforTableList: React.FC = () => {
     })
   }, [])
 
-  const columns: ProColumns<API.Monitor.Logininfor>[] = [
+  const columns: ProColumns<API.System.Logininfor>[] = [
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.info_id'
+          id='system.logininfor.info_id'
           defaultMessage='访问编号'
         />
       ),
@@ -140,7 +140,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.user_name'
+          id='system.logininfor.user_name'
           defaultMessage='用户账号'
         />
       ),
@@ -150,7 +150,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.ipaddr'
+          id='system.logininfor.ipaddr'
           defaultMessage='登录IP地址'
         />
       ),
@@ -160,7 +160,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.login_location'
+          id='system.logininfor.login_location'
           defaultMessage='登录地点'
         />
       ),
@@ -171,7 +171,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.browser'
+          id='system.logininfor.browser'
           defaultMessage='浏览器类型'
         />
       ),
@@ -182,7 +182,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.os'
+          id='system.logininfor.os'
           defaultMessage='操作系统'
         />
       ),
@@ -193,7 +193,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.status'
+          id='system.logininfor.status'
           defaultMessage='登录状态'
         />
       ),
@@ -207,7 +207,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.msg'
+          id='system.logininfor.msg'
           defaultMessage='提示消息'
         />
       ),
@@ -218,7 +218,7 @@ const LogininforTableList: React.FC = () => {
     {
       title: (
         <FormattedMessage
-          id='monitor.logininfor.login_time'
+          id='system.logininfor.login_time'
           defaultMessage='访问时间'
         />
       ),
@@ -230,7 +230,7 @@ const LogininforTableList: React.FC = () => {
   return (
     <PageContainer>
       <div style={{ width: '100%', float: 'right' }}>
-        <ProTable<API.Monitor.Logininfor>
+        <ProTable<API.System.Logininfor>
           headerTitle={intl.formatMessage({
             id: 'pages.searchTable.title',
             defaultMessage: '信息',
@@ -248,7 +248,7 @@ const LogininforTableList: React.FC = () => {
               danger
               hidden={
                 selectedRows?.length === 0 ||
-                !access.hasPerms('monitor:logininfor:remove')
+                !access.hasPerms('system:logininfor:remove')
               }
               onClick={async () => {
                 Modal.confirm({
@@ -278,7 +278,7 @@ const LogininforTableList: React.FC = () => {
               danger
               hidden={
                 selectedRows?.length === 0 ||
-                !access.hasPerms('monitor:logininfor:remove')
+                !access.hasPerms('system:logininfor:remove')
               }
               onClick={async () => {
                 Modal.confirm({
@@ -307,7 +307,7 @@ const LogininforTableList: React.FC = () => {
               key='unlock'
               hidden={
                 selectedRows?.length === 0 ||
-                !access.hasPerms('monitor:logininfor:unlock')
+                !access.hasPerms('system:logininfor:unlock')
               }
               onClick={async () => {
                 Modal.confirm({
@@ -327,22 +327,8 @@ const LogininforTableList: React.FC = () => {
             >
               <UnlockOutlined />
               <FormattedMessage
-                id='monitor.logininfor.unlock'
+                id='system.logininfor.unlock'
                 defaultMessage='解锁'
-              />
-            </Button>,
-            <Button
-              type='primary'
-              key='export'
-              hidden={!access.hasPerms('monitor:logininfor:export')}
-              onClick={async () => {
-                handleExport()
-              }}
-            >
-              <PlusOutlined />
-              <FormattedMessage
-                id='pages.searchTable.export'
-                defaultMessage='导出'
               />
             </Button>,
           ]}
@@ -351,7 +337,7 @@ const LogininforTableList: React.FC = () => {
               ...params,
             } as API.Monitor.LogininforListParams).then((res) => {
               const result = {
-                data: res.rows,
+                data: res.data.list,
                 total: res.total,
                 success: true,
               }
@@ -384,7 +370,7 @@ const LogininforTableList: React.FC = () => {
         >
           <Button
             key='remove'
-            hidden={!access.hasPerms('monitor:logininfor:remove')}
+            hidden={!access.hasPerms('system:logininfor:remove')}
             onClick={async () => {
               Modal.confirm({
                 title: '删除',

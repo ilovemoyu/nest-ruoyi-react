@@ -355,20 +355,6 @@ const ConfigTableList: React.FC = () => {
             </Button>,
             <Button
               type='primary'
-              key='export'
-              hidden={!access.hasPerms('system:config:export')}
-              onClick={async () => {
-                handleExport()
-              }}
-            >
-              <DownloadOutlined />
-              <FormattedMessage
-                id='pages.searchTable.export'
-                defaultMessage='导出'
-              />
-            </Button>,
-            <Button
-              type='primary'
               key='refresh'
               danger
               hidden={!access.hasPerms('system:config:remove')}
