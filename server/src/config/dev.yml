@@ -30,22 +30,22 @@ db:
   mysql:
     host: 'localhost'
     username: 'root'
-    password: '123456'
-    database: 'hyper_center'
+    password: 'Admin@123456'
+    database: 'lusun_admin_dev'
     port: 3306
     charset: 'utf8mb4'
     logger: 'file'
     logging: true
     multipleStatements: true
     dropSchema: false
-    synchronize: false
+    synchronize: true
     supportBigNumbers: true
     bigNumberStrings: true
 
 # redis 配置
 redis:
   host: 'localhost'
-  password: '123456'
+  password: ''
   port: 6379
   db: 0
   keyPrefix: 'nest:'

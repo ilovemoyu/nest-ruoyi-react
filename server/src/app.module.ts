@@ -47,8 +47,6 @@ import { UploadModule } from './module/upload/upload.module';
           autoLoadEntities: true,
           keepConnectionAlive: true,
           timezone: '+08:00',
-          //同步数据库
-          // synchronize: true,
           ...config.get('db.mysql'),
         } as TypeOrmModuleOptions;
       },

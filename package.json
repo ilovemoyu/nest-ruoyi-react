@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "基础 Nest.js 和 React 的若依框架，使用 Antd.",
   "scripts": {
-    "dev:all": "pnpm -r --filter './admin' --filter './server' run dev",
     "format": "biome check --apply ./admin/ && biome check --apply ./server/"
   },
   "author": {
