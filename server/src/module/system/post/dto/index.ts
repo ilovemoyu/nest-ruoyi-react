@@ -47,6 +47,11 @@ export class ListPostDto extends PagingDto {
   @IsOptional()
   @IsString()
   @Length(0, 50)
+  postId?: number;
+
+  @IsOptional()
+  @IsString()
+  @Length(0, 50)
   postName?: string;
 
   @IsOptional()

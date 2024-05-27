@@ -21,6 +21,10 @@ export class PostService {
     const entity = this.sysPostEntityRep.createQueryBuilder('entity');
     entity.where('entity.delFlag = :delFlag', { delFlag: '0' });
 
+    if (query.postId) {
+      entity.andWhere(`entity.postId LIKE "%${query.postId}%"`);
+    }
+
     if (query.postName) {
       entity.andWhere(`entity.postName LIKE "%${query.postName}%"`);
     }
