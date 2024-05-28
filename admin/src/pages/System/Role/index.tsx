@@ -306,10 +306,11 @@ const RoleTableList: React.FC = () => {
           onClick={() => {
             getRoleMenuList(record.roleId).then((res) => {
               if (res.code === 200) {
-                const treeData = formatTreeData(res.menus)
+                console.log(res)
+                const treeData = formatTreeData(res.data.menus)
                 setMenuTree(treeData)
                 setMenuIds(
-                  res.checkedKeys.map((item) => {
+                  res.data.checkedKeys.map((item) => {
                     return `${item}`
                   }),
                 )
